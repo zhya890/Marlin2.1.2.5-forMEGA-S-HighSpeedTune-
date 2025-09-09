@@ -2332,6 +2332,10 @@
 #endif
 
 // @section motion
+#define S_CURVE_ACCELERATION   // Smooth acceleration/deceleration profile
+
+// 推奨：最初はテスト用に小規模プリントで挙動確認
+// 注意：この設定は加速度・Junction Deviation 等に影響するため、印刷時に振動やリングが増える場合は再調整してください
 
 // Moves (or segments) with fewer steps than this will be joined with the next move
 #define MIN_STEPS_PER_SEGMENT 6
