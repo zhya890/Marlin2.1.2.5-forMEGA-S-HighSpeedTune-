@@ -1794,8 +1794,8 @@
  * 実機のスイッチ（NC / NO）に合わせて true/false を設定
  * 初期は既存の Z_MIN と合わせておき、M119 で確認して調整するのが良い
  */
-#define Z_MIN_ENDSTOP_INVERTING   true    // 右側エンドストップ（+X 方向から見て右）
-#define Z2_MIN_ENDSTOP_INVERTING  false   // 左側エンドストップ（+X 方向から見て左）
+#define Z_MIN_ENDSTOP_INVERTING   false   // 右側エンドストップ（+X 方向から見て右）
+#define Z2_MIN_ENDSTOP_INVERTING  true    // 左側エンドストップ（+X 方向から見て左）
 
 /**
  * Z ホーム方向（既に定義済みなら重複不要）
