@@ -1780,6 +1780,44 @@
 //#define V_HOME_DIR -1
 //#define W_HOME_DIR -1
 
+
+// ====================== Z軸デュアルステッパー設定 ======================
+
+/**
+ * Z軸に2つのステッパーモーターがある場合
+ */
+#define Z_DUAL_STEPPER_DRIVERS       // Z軸2モーターを有効化
+
+/**
+ * 左右のZ軸エンドストップを個別に監視
+ * これにより、Z軸ホーム時に各モーターが独立で停止できる
+ */
+#define Z_DUAL_ENDSTOPS
+
+/**
+ * Z軸エンドストップ極性
+ * スイッチがNCなら true、NOなら false に設定
+ */
+#define Z_MIN_ENDSTOP_INVERTING      true   // 右側エンドストップ
+#define Z2_MIN_ENDSTOP_INVERTING     false  // 左側エンドストップ（必要に応じて変更）
+
+/**
+ * Z軸ホーム方向
+ * 下方向に移動する場合は -1
+ */
+#define Z_HOME_DIR -1
+
+/**
+ * Z軸スレーブモーターの最大電流（必要に応じて調整）
+ * ステッパードライバーの安全上限に合わせて設定
+ */
+//#define Z_DUAL_STEPPER_DRIVER_MAX_CURRENT 1000  // mA 単位（例）
+
+// =====================================================================
+
+
+
+
 // @section geometry
 
 // The size of the printable area
