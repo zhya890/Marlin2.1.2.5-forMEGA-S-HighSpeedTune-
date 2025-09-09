@@ -2332,10 +2332,32 @@
 #endif
 
 // @section motion
+// @section motion
+
+// Minimum number of steps per segment (既存設定)
+#define MIN_STEPS_PER_SEGMENT 6
+
+// S-Curve Acceleration を有効化（加速度の滑らかな立ち上がり/立ち下がり）
 #define S_CURVE_ACCELERATION   // Smooth acceleration/deceleration profile
 
-// 推奨：最初はテスト用に小規模プリントで挙動確認
-// 注意：この設定は加速度・Junction Deviation 等に影響するため、印刷時に振動やリングが増える場合は再調整してください
+// 安全上の推奨値（MEGA-S 実用速度範囲に対応）
+// ここでの加速度は長時間印刷に耐えられる範囲を想定
+#define DEFAULT_MAX_ACCELERATION      { 3000, 2000,  60, 10000 }  // X, Y, Z, E
+#define DEFAULT_ACCELERATION          1500    // Printing moves
+#define DEFAULT_RETRACT_ACCELERATION  3000    // Retracts
+#define DEFAULT_TRAVEL_ACCELERATION   3000    // Non-print moves
+
+// Junction Deviation（JD）設定は変更不要
+#if DISABLED(CLASSIC_JERK)
+  #define JUNCTION_DEVIATION_MM 0.013 // デフォルト値で十分
+  #define JD_HANDLE_SMALL_SEGMENTS
+#endif
+
+// ステッパー関連設定は現状維持
+//#define MINIMUM_STEPPER_POST_DIR_DELAY 650
+//#define MINIMUM_STEPPER_PRE_DIR_DELAY 650
+//#define MINIMUM_STEPPER_PULSE 2
+//#define MAXIMUM_STEPPER_RATE 250000
 
 // Moves (or segments) with fewer steps than this will be joined with the next move
 #define MIN_STEPS_PER_SEGMENT 6
