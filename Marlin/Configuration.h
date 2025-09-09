@@ -1784,22 +1784,18 @@
 // ====================== Z軸デュアルエンドストップ設定 ======================
 
 /**
- * Z軸に2つのステッパーモーターがある場合
- * ※ Marlin 2.1.x では Z_DUAL_STEPPER_DRIVERS は不要／削除
+ * Marlin 2.1.x では Z_DUAL_ENDSTOPS は廃止
+ * 左右の Z エンドストップを個別に監視する場合は Z_MULTI_ENDSTOPS を使用
  */
-
-/**
- * 左右の Z エンドストップを個別に監視（有効化）
- */
-#define Z_DUAL_ENDSTOPS
+#define Z_MULTI_ENDSTOPS
 
 /**
  * Z エンドストップの論理（スイッチ極性）
  * 実機のスイッチ（NC / NO）に合わせて true/false を設定
- * 初期は既存の Z_MIN と合わせておき、M119 で確認して調整するのが良い。
+ * 初期は既存の Z_MIN と合わせておき、M119 で確認して調整するのが良い
  */
-#define Z_MIN_ENDSTOP_INVERTING   true   // 右側エンドストップ（あなたの設定に合わせて）
-#define Z2_MIN_ENDSTOP_INVERTING  false  // 左側エンドストップ（必要に応じて切替）
+#define Z_MIN_ENDSTOP_INVERTING   true    // 右側エンドストップ（+X 方向から見て右）
+#define Z2_MIN_ENDSTOP_INVERTING  false   // 左側エンドストップ（+X 方向から見て左）
 
 /**
  * Z ホーム方向（既に定義済みなら重複不要）
