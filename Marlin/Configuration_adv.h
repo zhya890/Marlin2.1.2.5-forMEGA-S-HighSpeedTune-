@@ -2332,7 +2332,6 @@
 #endif
 
 // @section motion
-// @section motion
 
 // Minimum number of steps per segment (既存設定)
 #define MIN_STEPS_PER_SEGMENT 6
